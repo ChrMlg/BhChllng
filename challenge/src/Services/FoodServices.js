@@ -1,13 +1,13 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'http://localhost:3030';
 
-const FoodService = async (username,password,confirmPassword) => {
+const FoodService = async (name,price,restaurant) => {
     try {
         const response = await fetch (`${API_URL}/dishes/newUser`, {
             method: 'POST',
             body: JSON.stringify({ 
-                    username,
-                    password,
-                    confirmPassword
+                    name,
+                    price,
+                    restaurant
              })
         });
         const data = await response.json();
@@ -21,4 +21,4 @@ const FoodService = async (username,password,confirmPassword) => {
     }
 }
 
-export default UserService;
+export default FoodService;
